@@ -10,3 +10,7 @@ python djangonautic/manage.py runserver
 python djangonautic/manage.py startapp articles
 
 ```
+
+### Django Models Fields
+
+https://docs.djangoproject.com/en/2.0/ref/models/fields/
