@@ -24,3 +24,8 @@ python djangonautic/manage.py migrate
 ```
 python djangonautic/manage.py makemigrations
 ```
+
+### Django Shell
+```
+python djangonautic/manage.py shell
+```
