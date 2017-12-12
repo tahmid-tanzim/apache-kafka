@@ -29,3 +29,9 @@ python djangonautic/manage.py makemigrations
 ```
 python djangonautic/manage.py shell
 ```
+
+### Django Admin
+```
+python djangonautic/manage.py createsuperuser
+Username (leave blank to use 'tanzim')
+```
