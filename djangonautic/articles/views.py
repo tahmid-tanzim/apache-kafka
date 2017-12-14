@@ -8,4 +8,5 @@ def list(request):
     return render(request, "articles/list.html", {"articles": articles})
 
 def details(request, slug):
-    return HttpResponse(slug)
+    article = Article.objects.get(slug=slug)
+    return render(request, "articles/details.html", {"article": article})
