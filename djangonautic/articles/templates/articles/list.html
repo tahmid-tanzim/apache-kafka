@@ -1,10 +1,10 @@
 {% extends 'base_template.html' %}
 
 {% block content %}
-    <h1>Article list</h1>
+    <h2>Article list</h2>
     <hr>
     {% for article in articles %}
-    <h3>{{ article.title }}</h3>
+    <h3><a href="{% url 'articles:details' slug=article.slug %}">{{ article.title }}</a></h3>
     <p>{{ article.snippet }}</p>
     <small>{{ article.date }}</small>
     <br>

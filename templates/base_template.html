@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="container">
+    <p><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}" alt="Logo"></a></p>
     {% block content %}
     {% endblock %}
 </div>
