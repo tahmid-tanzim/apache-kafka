@@ -45,3 +45,8 @@ Username (leave blank to use 'tanzim')
 ```
 pip3 install Pillow
 ```
+
+### Create new Accounts App
+```
+python djangonautic/manage.py startapp accounts
+```
