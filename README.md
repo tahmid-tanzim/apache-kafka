@@ -1,5 +1,10 @@
 # Django Playlist
 
+### Install Django
+```
+pip3 install django
+```
+
 ### Run Server
 ```
 python djangonautic/manage.py runserver
@@ -34,4 +39,9 @@ python djangonautic/manage.py shell
 ```
 python djangonautic/manage.py createsuperuser
 Username (leave blank to use 'tanzim')
+```
+
+### Install Pillow
+```
+pip3 install Pillow
 ```
