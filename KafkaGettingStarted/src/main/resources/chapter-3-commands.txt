@@ -13,14 +13,14 @@
 ## Creating new Topics
 
         ./kafka-topics.sh \
-            --zookeeper zookeeper:2181 \
+            --bootstrap-server localhost:29092 \
             --create \
             --topic kafka.learning.tweets \
             --partitions 1 \
             --replication-factor 1
 
         ./kafka-topics.sh \
-            --zookeeper zookeeper:2181 \
+            --bootstrap-server localhost:29092 \
             --create \
             --topic kafka.learning.alerts \
             --partitions 1 \
@@ -29,13 +29,13 @@
 ## Listing Topics
 
         ./kafka-topics.sh \
-            --zookeeper zookeeper:2181 \
+            --bootstrap-server localhost:29092 \
             --list
 
 ## Getting details about a Topic
 
         ./kafka-topics.sh \
-            --zookeeper zookeeper:2181 \
+            --bootstrap-server localhost:29092 \
             --describe
 
 
@@ -55,7 +55,7 @@
 ## Deleting Topics
 
         ./kafka-topics.sh \
-            --zookeeper zookeeper:2181 \
+            --bootstrap-server localhost:29092 \
             --delete \
             --topic kafka.learning.alerts
 

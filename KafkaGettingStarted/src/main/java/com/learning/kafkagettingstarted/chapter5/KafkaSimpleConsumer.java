@@ -47,7 +47,7 @@ public class KafkaSimpleConsumer {
         //Continuously poll for new messages
         while(true) {
 
-            //Poll with timeout of 100 milli seconds
+            //Poll with timeout of 100 milliseconds
             ConsumerRecords<String, String> messages =
                     simpleConsumer.poll(Duration.ofMillis(100));
 

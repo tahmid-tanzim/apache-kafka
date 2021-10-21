@@ -57,3 +57,16 @@ cd /opt/bitnami/kafka/bin
   --delete \
   --topic kafka.learning.alerts
 ```
+### Kafka Setup
+```shell
+docker exec -it zookeeper /bin/bash
+cd /opt/bitnami/zookeeper/bin
+./zkCli.sh
+```
+
+* Each topic can have 1-n partitions.
+* Partitions allow kafka to scale.
+* Partitions have separate log file.
+* Each Partition has a Leader broker.
+* Enables consumers to share workloads through consumer groups.
+* Partitions can be replicated.
