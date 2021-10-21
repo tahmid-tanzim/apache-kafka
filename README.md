@@ -1,52 +1,59 @@
-# Django Playlist
+# Apache Kafka
 
-### Install Django
+### Launch Kafka & Zookeeper Container
+```shell
+docker-compose -f kafka-single-node.yml up -d
 ```
-pip3 install django
+### Logging into the Kafka Container
+```shell
+docker exec -it kafka-broker /bin/bash
+cd /opt/bitnami/kafka/bin
 ```
+### Creating new Topics
+```shell
+./kafka-topics.sh \
+  --bootstrap-server localhost:29092 \
+  --create \
+  --topic kafka.learning.tweets \
+  --partitions 1 \
+  --replication-factor 1
 
-### Run Server
+./kafka-topics.sh \
+  --bootstrap-server localhost:29092 \
+  --create \
+  --topic kafka.learning.alerts \
+  --partitions 1 \
+  --replication-factor 1
 ```
-python djangonautic/manage.py runserver
+### Listing Topics
+```shell
+./kafka-topics.sh \
+  --bootstrap-server localhost:29092 \
+  --list
 ```
-
-### New App
+### Getting details about a Topic
+```shell
+./kafka-topics.sh \
+  --bootstrap-server localhost:29092 \
+  --describe
 ```
-python djangonautic/manage.py startapp articles
-
+### Publishing Messages to Topics
+```shell
+./kafka-console-producer.sh \
+  --bootstrap-server localhost:29092 \
+  --topic kafka.learning.tweets
 ```
-
-### Django Models Fields
-
-https://docs.djangoproject.com/en/2.0/ref/models/fields/
-
-### Django Migration
+### Consuming Messages from Topics
+```shell
+./kafka-console-consumer.sh \
+  --bootstrap-server localhost:29092 \
+  --topic kafka.learning.tweets \
+  --from-beginning
 ```
-python djangonautic/manage.py migrate
-```
-
-### Django CREATE Migration File
-```
-python djangonautic/manage.py makemigrations
-```
-
-### Django Shell
-```
-python djangonautic/manage.py shell
-```
-
-### Django Admin
-```
-python djangonautic/manage.py createsuperuser
-Username (leave blank to use 'tanzim')
-```
-
-### Install Pillow
-```
-pip3 install Pillow
-```
-
-### Create new Accounts App
-```
-python djangonautic/manage.py startapp accounts
+### Deleting Topics
+```shell
+./kafka-topics.sh \
+  --bootstrap-server localhost:29092 \
+  --delete \
+  --topic kafka.learning.alerts
 ```
